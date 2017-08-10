@@ -12,10 +12,17 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        if !defaults.bool(forKey: "firstStart") {
+            defaults.set(false, forKey: "firstStart")
+        } else {
+            defaults.set(15, forKey: "default")
+            defaults.set(0, forKey: "minimum")
+            defaults.set(50, forKey: "maximum")
+            defaults.synchronize()
+        }
         return true
     }
 
@@ -25,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        defaults.set(Date(), forKey: "endTime")
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
