@@ -15,6 +15,8 @@
 		6D4230861F381EB300342CD8 /* tippedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4230851F381EB300342CD8 /* tippedTests.swift */; };
 		6D4230911F381EB300342CD8 /* tippedUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4230901F381EB300342CD8 /* tippedUITests.swift */; };
 		6D42309F1F3825A400342CD8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D42309E1F3825A400342CD8 /* SettingsViewController.swift */; };
+		F4E9BF111F3C2DAF00A3C6B2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9BF101F3C2DAF00A3C6B2 /* HistoryViewController.swift */; };
+		F4E9BF131F3C316000A3C6B2 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E9BF121F3C316000A3C6B2 /* HistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		6D4230901F381EB300342CD8 /* tippedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tippedUITests.swift; sourceTree = "<group>"; };
 		6D4230921F381EB300342CD8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D42309E1F3825A400342CD8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F4E9BF101F3C2DAF00A3C6B2 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		F4E9BF121F3C316000A3C6B2 /* HistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				6D4230771F381EB300342CD8 /* Assets.xcassets */,
 				6D4230791F381EB300342CD8 /* LaunchScreen.storyboard */,
 				6D42307C1F381EB300342CD8 /* Info.plist */,
+				F4E9BF101F3C2DAF00A3C6B2 /* HistoryViewController.swift */,
+				F4E9BF121F3C316000A3C6B2 /* HistoryCell.swift */,
 			);
 			path = tipped;
 			sourceTree = "<group>";
@@ -196,7 +202,7 @@
 				TargetAttributes = {
 					6D42306C1F381EB200342CD8 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = WXC4F48AGZ;
+						DevelopmentTeam = TMD6XCU7B7;
 						ProvisioningStyle = Automatic;
 					};
 					6D4230801F381EB300342CD8 = {
@@ -268,6 +274,8 @@
 				6D4230731F381EB300342CD8 /* TipViewController.swift in Sources */,
 				6D4230711F381EB300342CD8 /* AppDelegate.swift in Sources */,
 				6D42309F1F3825A400342CD8 /* SettingsViewController.swift in Sources */,
+				F4E9BF111F3C2DAF00A3C6B2 /* HistoryViewController.swift in Sources */,
+				F4E9BF131F3C316000A3C6B2 /* HistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,12 +429,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WXC4F48AGZ;
+				DEVELOPMENT_TEAM = TMD6XCU7B7;
 				INFOPLIST_FILE = tipped/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradencasperson.tipped;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -434,12 +443,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WXC4F48AGZ;
+				DEVELOPMENT_TEAM = TMD6XCU7B7;
 				INFOPLIST_FILE = tipped/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bradencasperson.tipped;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -520,6 +530,7 @@
 				6D4230971F381EB300342CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D4230981F381EB300342CD8 /* Build configuration list for PBXNativeTarget "tippedTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +539,7 @@
 				6D42309A1F381EB300342CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6D42309B1F381EB300342CD8 /* Build configuration list for PBXNativeTarget "tippedUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +548,7 @@
 				6D42309D1F381EB300342CD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

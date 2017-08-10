@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SettingsDelegate: class {
+    func updatedMinMaxValues(min: Int, max: Int)
+}
+
 class SettingsViewController: UITableViewController {
     
     @IBOutlet weak var defaultTextField: UITextField!
@@ -15,6 +19,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var maximumTextField: UITextField!
     @IBOutlet weak var darkSwitch: UISwitch!
     
+    weak var delegate: SettingsDelegate?
     var defaultSettings = ["Default", "Minimum", "Maxiumum"]
     var otherSettings = ["Dark Mode", "History"]
     let defaults = UserDefaults.standard
@@ -36,10 +41,12 @@ class SettingsViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if defaults.bool(forKey: "dark") {
-            self.navigationController?.navigationBar.barTintColor = UIColor.white
-            self.navigationController?.navigationBar.backgroundColor = UIColor.white
-        } 
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        delegate?.updatedMinMaxValues(min: Int(minimumTextField.text!)!, max: Int(maximumTextField.text!)!)
     }
 
     @IBAction func darkModeSwitch(_ sender: Any) {

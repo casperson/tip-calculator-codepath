@@ -15,12 +15,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let defaults = UserDefaults.standard
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if !defaults.bool(forKey: "firstStart") {
-            defaults.set(false, forKey: "firstStart")
-        } else {
+        if !defaults.bool(forKey: "startedBefore") {
+            defaults.set(true, forKey: "startedBefore")
+            let history = [Any]()
             defaults.set(15, forKey: "default")
             defaults.set(0, forKey: "minimum")
             defaults.set(50, forKey: "maximum")
+            defaults.set(15, forKey: "percentage")
+            defaults.set(history, forKey: "history")
             defaults.synchronize()
         }
         return true

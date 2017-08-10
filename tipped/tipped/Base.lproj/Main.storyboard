@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tipsy-->
+        <!--💸-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <tapGestureRecognizer id="OMW-sX-90y">
@@ -30,14 +30,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H4J-jY-gTO">
-                                <rect key="frame" x="-4" y="64" width="387" height="672"/>
+                                <rect key="frame" x="-4" y="64" width="383" height="672"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ike-0a-YO7">
-                                        <rect key="frame" x="0.0" y="0.0" width="379" height="118"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="118"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="118" id="K1z-1D-1MT"/>
                                         </constraints>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="90"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
@@ -45,7 +45,7 @@
                                         </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P39-Jl-MjE">
-                                        <rect key="frame" x="174" y="126" width="193" height="39"/>
+                                        <rect key="frame" x="174" y="126" width="189" height="39"/>
                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="31"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eWi-VD-0cw">
-                                        <rect key="frame" x="14" y="513" width="359" height="71.5"/>
+                                        <rect key="frame" x="14" y="513" width="355" height="71.5"/>
                                         <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="58"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -84,9 +84,8 @@
                                     <constraint firstItem="5YN-7L-mRm" firstAttribute="top" secondItem="ike-0a-YO7" secondAttribute="bottom" constant="8" id="OSB-N3-kE4"/>
                                     <constraint firstItem="ike-0a-YO7" firstAttribute="leading" secondItem="H4J-jY-gTO" secondAttribute="leading" id="bAu-H1-wMs"/>
                                     <constraint firstItem="P39-Jl-MjE" firstAttribute="top" secondItem="ike-0a-YO7" secondAttribute="bottom" constant="8" id="cdk-lQ-cmU"/>
-                                    <constraint firstItem="ike-0a-YO7" firstAttribute="top" secondItem="H4J-jY-gTO" secondAttribute="top" id="eRt-sx-iBT"/>
                                     <constraint firstItem="P39-Jl-MjE" firstAttribute="leading" secondItem="H4J-jY-gTO" secondAttribute="leading" constant="174" id="lce-kM-gdy"/>
-                                    <constraint firstAttribute="trailing" secondItem="ike-0a-YO7" secondAttribute="trailing" constant="8" id="t1v-Nw-xfO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ike-0a-YO7" secondAttribute="trailing" id="t1v-Nw-xfO"/>
                                     <constraint firstItem="5YN-7L-mRm" firstAttribute="leading" secondItem="H4J-jY-gTO" secondAttribute="leading" constant="8" id="wX6-gI-ZVo"/>
                                 </constraints>
                             </view>
@@ -94,17 +93,23 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="H4J-jY-gTO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="61k-sd-VjZ"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eWi-VD-0cw" secondAttribute="bottom" constant="18.666666666666629" id="Q8n-zt-Orn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H4J-jY-gTO" secondAttribute="trailing" constant="-24" id="e7k-Rm-IM1"/>
+                            <constraint firstItem="ike-0a-YO7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="U4W-RC-XaX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H4J-jY-gTO" secondAttribute="trailing" constant="-20" id="e7k-Rm-IM1"/>
                             <constraint firstItem="H4J-jY-gTO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="pXl-Yy-uPq"/>
+                            <constraint firstItem="H4J-jY-gTO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="xtH-nW-9jA"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="WDb-PZ-t5a" appends="YES" id="hSq-PV-4gW"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tipsy" id="srE-kQ-31n">
-                        <barButtonItem key="rightBarButtonItem" title="⚙" id="AbX-Ua-j2u">
+                    <navigationItem key="navigationItem" title="💸" id="srE-kQ-31n">
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="SoC-5K-uVs">
+                            <connections>
+                                <action selector="saveValues:" destination="BYZ-38-t0r" id="elg-wK-E8y"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="AbX-Ua-j2u">
                             <connections>
                                 <segue destination="svx-hj-Wv4" kind="show" id="Vn4-lY-IMA"/>
                             </connections>
@@ -113,6 +118,7 @@
                     <connections>
                         <outlet property="billField" destination="ike-0a-YO7" id="yyq-bG-SQa"/>
                         <outlet property="percentageLabel" destination="5YN-7L-mRm" id="OOf-Rr-BBl"/>
+                        <outlet property="percentageSymbolLabel" destination="8Ay-mv-Qiq" id="IdJ-OS-Uiz"/>
                         <outlet property="tipLabel" destination="P39-Jl-MjE" id="tIl-d7-LNu"/>
                         <outlet property="tipView" destination="H4J-jY-gTO" id="22B-H3-YuN"/>
                         <outlet property="totalBottomContraint" destination="Q8n-zt-Orn" id="Mge-Au-TM7"/>
@@ -276,7 +282,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HistoryCell" textLabel="VvX-Q1-luZ" style="IBUITableViewCellStyleDefault" id="lr0-qr-gzX">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="HistoryCell" textLabel="VvX-Q1-luZ" style="IBUITableViewCellStyleDefault" id="lr0-qr-gzX">
                                         <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lr0-qr-gzX" id="d0F-5G-hI5">
@@ -292,6 +298,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="A0Z-sl-oU9" kind="show" id="RRy-mq-laU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -312,6 +321,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdJ-e4-xaF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2029.5999999999999" y="138.98050974512745"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="DYo-7l-dhs">
+            <objects>
+                <tableViewController title="History" id="A0Z-sl-oU9" customClass="HistoryViewController" customModule="tipped" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="28" sectionFooterHeight="28" id="Efj-Ze-sgo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="57" id="ZDA-Ap-GbE" customClass="HistoryCell" customModule="tipped" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="57"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZDA-Ap-GbE" id="4oe-fN-1D5">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fly-SD-7jH">
+                                            <rect key="frame" x="8" y="0.0" width="36" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pjl-8B-mAf">
+                                            <rect key="frame" x="35" y="29" width="13" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUK-fU-2nt">
+                                            <rect key="frame" x="8" y="30" width="27" height="20"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UM-pD-YZT">
+                                            <rect key="frame" x="313" y="28" width="9.5" height="20"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="fSE-0w-9fH">
+                                            <rect key="frame" x="205" y="30" width="36" height="20"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="5SB-OL-kQE">
+                                            <rect key="frame" x="331" y="30" width="36" height="20"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="5Zb-6X-wBO">
+                                            <rect key="frame" x="267.5" y="30" width="36" height="20"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiT-cm-OGR">
+                                            <rect key="frame" x="250" y="28" width="9.5" height="20"/>
+                                            <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fiT-cm-OGR" secondAttribute="bottom" constant="0.5" id="4xc-8i-TVM"/>
+                                        <constraint firstItem="Fly-SD-7jH" firstAttribute="top" secondItem="4oe-fN-1D5" secondAttribute="topMargin" constant="-8" id="Aen-b8-5Mz"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5Zb-6X-wBO" secondAttribute="bottom" constant="-1.5" id="D8W-AD-Lfo"/>
+                                        <constraint firstItem="5Zb-6X-wBO" firstAttribute="leading" secondItem="fiT-cm-OGR" secondAttribute="trailing" constant="8" id="EKA-8X-ioA"/>
+                                        <constraint firstItem="5SB-OL-kQE" firstAttribute="leading" secondItem="2UM-pD-YZT" secondAttribute="trailing" constant="8" id="ENu-6s-HZm"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="Fly-SD-7jH" secondAttribute="leading" id="NBq-FV-8NW"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fSE-0w-9fH" secondAttribute="bottom" constant="-1.5" id="NtQ-1G-JlO"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5SB-OL-kQE" secondAttribute="bottom" constant="-1.5" id="RqU-Hv-Awf"/>
+                                        <constraint firstItem="fiT-cm-OGR" firstAttribute="leading" secondItem="fSE-0w-9fH" secondAttribute="trailing" constant="9" id="TrD-jB-Qhv"/>
+                                        <constraint firstItem="2UM-pD-YZT" firstAttribute="leading" secondItem="5Zb-6X-wBO" secondAttribute="trailing" constant="10" id="aOD-Jz-J9y"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Pjl-8B-mAf" secondAttribute="bottom" constant="-1.5" id="ar0-Z7-Oz4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5SB-OL-kQE" secondAttribute="trailing" id="cbe-uj-WOo"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="DUK-fU-2nt" secondAttribute="leading" id="cop-cT-SB4"/>
+                                        <constraint firstItem="Pjl-8B-mAf" firstAttribute="leading" secondItem="DUK-fU-2nt" secondAttribute="trailing" id="e6V-hR-ogv"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="2UM-pD-YZT" secondAttribute="bottom" constant="0.5" id="yaM-zr-hzL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="DUK-fU-2nt" secondAttribute="bottom" constant="-1.5" id="zUK-Ac-HdT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bill" destination="fSE-0w-9fH" id="6bG-NK-3Lw"/>
+                                    <outlet property="date" destination="Fly-SD-7jH" id="MXl-mF-0bp"/>
+                                    <outlet property="percentage" destination="DUK-fU-2nt" id="eta-JU-lpq"/>
+                                    <outlet property="tip" destination="5Zb-6X-wBO" id="ztB-5S-hX5"/>
+                                    <outlet property="total" destination="5SB-OL-kQE" id="HfI-yc-aIl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="A0Z-sl-oU9" id="Z8L-db-pLQ"/>
+                            <outlet property="delegate" destination="A0Z-sl-oU9" id="RgL-ou-Lkn"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLx-gu-uV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3032.8000000000002" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g8Z-kl-Gde">

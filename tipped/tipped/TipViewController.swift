@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TipViewController: UIViewController {
+class TipViewController: UIViewController, SettingsDelegate {
     
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
@@ -16,9 +16,8 @@ class TipViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipView: UIView!
     @IBOutlet weak var totalBottomContraint: NSLayoutConstraint!
+    @IBOutlet weak var percentageSymbolLabel: UILabel!
     
-    var newTranslation = CGPoint(x: 0.0, y: 0.0)
-    var previousTranslation = CGPoint(x: 0.0, y: 0.0)
     var maximum: Int = 0
     var minimum: Int = 0
     let defaults = UserDefaults.standard
@@ -26,6 +25,7 @@ class TipViewController: UIViewController {
     var tip = 0.0
     var total = 0.0
     var tipPercentage = 0.0
+    let formatter = NumberFormatter()
     
     let colors = [UIColor(red: 246/255, green: 136/255, blue: 151/255, alpha: 1),
                   UIColor(red: 246/255, green: 190/255, blue: 152/255, alpha: 1),
@@ -36,6 +36,10 @@ class TipViewController: UIViewController {
         super.viewDidLoad()
         billField.becomeFirstResponder()
         
+        formatter.numberStyle = .currency
+        
+        maximum = defaults.integer(forKey: "maximum")
+        minimum = defaults.integer(forKey: "minimum")
         percentageLabel.text = String(defaults.integer(forKey: "default"))
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(onSwipe))
@@ -45,39 +49,49 @@ class TipViewController: UIViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(onSwipe))
         swipeRight.direction = .right
         self.view.addGestureRecognizer(swipeRight)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        defaults.set(bill, forKey: "bill")
-        defaults.set(tipPercentage, forKey: "percentage")
-        defaults.set(tip, forKey: "tip")
-        defaults.set(total, forKey: "total")
-}
-
-    override func viewWillAppear(_ animated: Bool) {
-        maximum = defaults.integer(forKey: "maximum")
-        minimum = defaults.integer(forKey: "minimum")
-        
-        configureView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(TipViewController.keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        defaults.set(bill, forKey: "bill")
+        defaults.set(tipPercentage * 100, forKey: "percentage")
+        defaults.set(tip, forKey: "tip")
+        defaults.set(total, forKey: "total")
+        defaults.synchronize()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        configureView()
+    }
+    
     func configureView() {
         if defaults.bool(forKey: "dark") {
+            billField.keyboardAppearance = UIKeyboardAppearance.dark
             tipView.backgroundColor = UIColor.black
+            tipLabel.textColor = UIColor.white
+            percentageLabel.textColor = UIColor.white
+            totalLabel.textColor = UIColor.white
+            tipLabel.textColor = UIColor.white
+            percentageSymbolLabel.textColor = UIColor.white
         } else {
+            billField.keyboardAppearance = UIKeyboardAppearance.default
             tipView.backgroundColor = UIColor.white
+            tipLabel.textColor = UIColor.lightGray
+            percentageLabel.textColor = UIColor.lightGray
+            totalLabel.textColor = UIColor.lightGray
+            tipLabel.textColor = UIColor.lightGray
+            percentageSymbolLabel.textColor = UIColor.lightGray
         }
         
         if let endTime = defaults.object(forKey: "endTime") {
             print((endTime as! Date).timeIntervalSinceNow)
             
             if (endTime as! Date).timeIntervalSinceNow > -600 {
-                tipLabel.text = String.init(format: "$%.2f", defaults.double(forKey: "tip"))
-                totalLabel.text = String.init(format: "$%.2f", defaults.double(forKey: "total"))
-                billField.text = String.init(format: "f", locale: Locale.current, defaults.double(forKey: "bill"))
-                percentageLabel.text = String(describing: defaults.double(forKey: "percentage"))
+                tipLabel.text = formatter.string(from: defaults.double(forKey: "tip") as NSNumber)
+                totalLabel.text = formatter.string(from: defaults.double(forKey: "total") as NSNumber)
+                billField.text = defaults.integer(forKey: "bill") == 0 ? "" : String(defaults.integer(forKey: "bill"))
+                percentageLabel.text = defaults.integer(forKey: "percentage") <= minimum ? String(minimum) : String(describing: defaults.integer(forKey: "percentage"))
             }
         }
         
@@ -88,18 +102,14 @@ class TipViewController: UIViewController {
         if let keyboardFrame: NSValue = notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
             let keyboardHeight = keyboardRectangle.height
-            
-            let screenSize: CGRect = UIScreen.main.bounds
-            let height = UIApplication.shared.statusBarFrame.height + self.navigationController!.navigationBar.frame.height
-            tipView.frame = CGRect(x: 0, y: height, width: screenSize.width, height: screenSize.height - height - keyboardHeight)
             totalBottomContraint.constant = keyboardHeight + 18
         }
     }
    
     func checkPercentage(current: Int, velocity: CGFloat) -> Bool {
-        if velocity > 0 && current == maximum {
+        if velocity > 0 && current >= maximum {
             return false
-        } else if velocity < 0 && current == minimum {
+        } else if velocity < 0 && current <= minimum {
             return false
         }
         
@@ -109,23 +119,27 @@ class TipViewController: UIViewController {
     func getColor(_ percent: Int) {
         switch percent {
         case 0...16:
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
                 self.billField.backgroundColor = self.colors[0]
+                self.navigationController?.navigationBar.isTranslucent = false
                 self.navigationController?.navigationBar.barTintColor = self.colors[0]
             }, completion:nil)
         case 17...21:
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
                 self.billField.backgroundColor = self.colors[1]
+                self.navigationController?.navigationBar.isTranslucent = false
                 self.navigationController?.navigationBar.barTintColor = self.colors[1]
             }, completion:nil)
         case 22...24:
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
                 self.billField.backgroundColor = self.colors[2]
+                self.navigationController?.navigationBar.isTranslucent = false
                 self.navigationController?.navigationBar.barTintColor = self.colors[2]
             }, completion:nil)
         case 25...defaults.integer(forKey: "maximum"):
-            UIView.animate(withDuration: 0.5, animations: { () -> Void in
+            UIView.animate(withDuration: 0.1, animations: { () -> Void in
                 self.billField.backgroundColor = self.colors[3]
+                self.navigationController?.navigationBar.isTranslucent = false
                 self.navigationController?.navigationBar.barTintColor = self.colors[3]
             }, completion:nil)
         default:
@@ -140,14 +154,38 @@ class TipViewController: UIViewController {
         tip = bill * tipPercentage
         total = bill + tip
         
-        tipLabel.text = String.init(format: "$%.2f", locale: Locale.current, tip)
-        totalLabel.text = String.init(format: "$%.2f", locale: Locale.current, total)
+        tipLabel.text = formatter.string(from: tip as NSNumber)
+        totalLabel.text = formatter.string(from: total as NSNumber)
+    }
+    
+    func updatedMinMaxValues(min: Int, max: Int) {
+        minimum = min
+        maximum = max
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationViewController = segue.destination as? SettingsViewController {
+            destinationViewController.delegate = self
+        }
     }
     
     // MARK: IBActions
     
     @IBAction func onTap(_ sender: Any) {
         view.endEditing(true)
+    }
+    
+    @IBAction func saveValues(_ sender: Any) {
+        let date : Date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+        let rightNow = dateFormatter.string(from: date)
+        
+        let savedValues = ["bill": bill, "percentage": tipPercentage, "tip": tip, "total": total, "date": rightNow] as [String : Any]
+        var history = defaults.array(forKey: "history")
+        history?.append(savedValues)
+        defaults.set(history, forKey: "history")
+        defaults.synchronize()
     }
     
     @IBAction func onSwipe(_ sender: UIPanGestureRecognizer) {
