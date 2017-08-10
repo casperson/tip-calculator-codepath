@@ -7,7 +7,7 @@ Tipped 💸 is a tip calculator application for iOS.
 
 Submitted by: Braden Casperson
 
-Time spent: 13 hours spent in total
+Time spent: 15 hours spent in total
 
 ## User Stories
 
