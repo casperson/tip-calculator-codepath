@@ -32,9 +32,8 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src="http://imgur.com/V5t5L7Z" title='Region Change' width='' alt='Region Change' />
-
-<img src="http://imgur.com/0STY0AW" title='Region Change' width='' alt='Region Change' />
+[Imgur](http://i.imgur.com/0STY0AW.gifv)
+[Imgur](http://i.imgur.com/MydNJb0.gifv)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
